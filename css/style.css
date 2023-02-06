@@ -5,6 +5,9 @@ body {
     margin: 0;
 }
 
+a{
+    text-decoration:none ;
+}
 
 header {
     display: flex;
@@ -47,4 +50,14 @@ h1 {
 .photographer_section article img {
     height: 200px;
     width: 200px;
+    border-radius: 50%;
+    object-fit:cover;
+}
+
+.photographer_section  article p:first-of-type {
+    font-weight: bolder;
+}
+
+h3 {
+    color: #901C1C;
 }
