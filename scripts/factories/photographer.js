@@ -6,14 +6,19 @@ function photographerFactory(data) {
         const article = document.createElement( 'article' );
         article.innerHTML = 
         `
-            <a href = "./photographer.html?id=${data.id}">
+            <a href = "./photographer.html?id=${data.id}" alt='${data.name}'>
                 <h2>${data.name}</h2>
-                <img src=${picture} alt=""> </img>
+                <img src=${picture} alt='${data.name}'></img> 
             </a>
-            <h3>${city} </h3>
-            <p>${tagline} </p>
+            <h3>${city}</h3>
+            <p>${tagline}</p>
             <p>${price}€/jour</p>
         `;
+
+
+        // QUESTION ???
+        //Est-ce qu'on s'attends aussi à un alt sur image
+
     /*  const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
         const h2 = document.createElement( 'h2' );

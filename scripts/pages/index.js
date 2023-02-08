@@ -5,7 +5,7 @@
         // et bien retourner le tableau photographers seulement une fois récupéré
         .then((photographers) => photographers.json())
         console.log(photographers) 
-        return photographers 
+        return photographers
     }
 
     async function displayData(photographers) {
