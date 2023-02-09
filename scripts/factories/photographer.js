@@ -14,6 +14,45 @@ function photographerFactory(data) {
             <p>${tagline}</p>
             <p>${price}€/jour</p>
         `;
+        return (article);
+    }
+
+    function getProfilDescriptionCardDOM(){
+        const article = document.createElement('article'); 
+        article.innerHTML =
+         `
+        <h2>${data.name}</h2>
+        <h3>${city}</h3>
+        <p>${tagline}</p>        
+
+        `;
+        return (article);
+
+    }
+
+    function getProfilPhotoCardDOM(){
+        const article = document.createElement('article'); 
+        article.innerHTML =
+         `
+            <img src=${picture} alt='${data.name}' class='photographer-photo'></img> 
+        `;
+        return (article);
+
+    }
+    /// créer une autre fonction à cet endroit pour displayData => photographer ? nouvelle factory indépendante
+    function getProfilPriceAndLikeCardDOM(){
+        const article = document.createElement('article'); 
+        article.innerHTML =
+         `
+            <p>${price}€/jour</p>
+         `;
+        return (article);
+
+    }
+
+    return { name, picture, city, tagline, price, getUserCardDOM, getProfilDescriptionCardDOM, getProfilPhotoCardDOM, getProfilPriceAndLikeCardDOM }
+}
+
 
 
         // QUESTION ???
@@ -35,7 +74,3 @@ function photographerFactory(data) {
         article.appendChild(taglinearea);
         article.appendChild(pricearea); */
 
-        return (article);
-    }
-    return { name, picture, city, tagline, price, getUserCardDOM }
-}
