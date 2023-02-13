@@ -1,7 +1,7 @@
 function photographerFactory(data) {
     const { name, portrait, city, tagline, price } = data;
     const picture = `assets/photographers/${portrait}`;
-
+    console.log(data)
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
         article.innerHTML = 
@@ -44,7 +44,7 @@ function photographerFactory(data) {
         const article = document.createElement('article'); 
         article.innerHTML =
          `
-            <p>${price}€/jour</p>
+         <p>${price}€/jour</p>
          `;
         return (article);
 

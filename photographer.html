@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b9f969d6d6.js" crossorigin="anonymous"></script>
+
     <title>Fisheye - photographe </title>
   </head>
   <body>
@@ -20,24 +22,61 @@
         <div class="photographer_photo"> </div>
       </div>
         <div class="photographer_price_and_like"></div>
+        <h2 class="sort_bar">Trier par</h2>
+        <div class="media_photographer"></div>
     </main>
     <div id="contact_modal">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
+          <h2>Contactez-moi </h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
 				<form>
 					<div>
 						<label>Prénom</label>
-						<input />
+						<input
+                  class="text-control"
+                  type="text"
+                  id="first"
+                  name="first"
+                  minlength="2"
+                />
 					</div>
+          <div>
+            <label>Nom</label>
+						<input
+                  class="text-control"
+                  type="text"
+                  id="first"
+                  name="first"
+                  minlength="2"
+              />
+					</div>
+          <div>
+            <label>E-mail</label><br>
+            <input
+                  class="text-control"
+                  type="email"
+                  id="email"
+                  name="email"
+              />
+          </div>
+          <div>
+            <label>Votre message</label><br>
+            <input
+                  class="text-control"
+                  type="text"
+                  id="message_form"
+                  name="message_form"
+              />
+          </div>
           <button class="contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>
     <script src="scripts/utils/getData.js"></script>
     <script src="/scripts/factories/photographer.js"></script>
+    <script src="/scripts/factories/media.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>

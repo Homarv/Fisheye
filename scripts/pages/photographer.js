@@ -1,4 +1,4 @@
-async function getProtographerObject (photographers){
+function getProtographerObject (photographers){
     const photographersSection = document.querySelector(".photographer_section");
     const queryString = window.location.search;
     console.log(queryString)
@@ -14,7 +14,6 @@ async function getProtographerObject (photographers){
         return(i)
     }
     else{
-        console.log(i)
     }
     };
   
@@ -29,7 +28,7 @@ async function getProtographerObject (photographers){
 //    console.log(x.name)
 //    )};
 
-async function displayData(photographer) {
+async function displayData(photographer, media) {
     const photographerModel = photographerFactory(photographer);
     ////input display Data description
     const photographerDescription = document.querySelector(".photographer_description");
@@ -43,6 +42,15 @@ async function displayData(photographer) {
     const photographerPriceAndLike = document.querySelector(".photographer_price_and_like");
     const ProfilPriceAndLikeCardDOM = photographerModel.getProfilPriceAndLikeCardDOM(); 
     photographerPriceAndLike.appendChild(ProfilPriceAndLikeCardDOM)
+    ////input display media
+    const mediaCard = document.querySelector(".media_photographer");
+    media.forEach((media) => {
+        if (media.photographerId === photographer.id){
+            const mediaModel = mediaFactory(media);
+            const mediaCardDOM = mediaModel.getMediaPhotographerCardDOM();
+            mediaCard.appendChild(mediaCardDOM);      
+        }
+  });
 
 };
 
@@ -53,12 +61,10 @@ async function displayData(photographer) {
 async function test() {
     // Récupère les datas des photographes
     const { photographers, media } = await getPhotographers();
-    console.log(photographers, media) 
-
-
     //separate(photographers);
-    const photographer = await getProtographerObject(photographers);
-    displayData(photographer); 
+    console.log(media)
+    const photographer = getProtographerObject(photographers);
+    displayData(photographer, media);
 };
 
 test();
