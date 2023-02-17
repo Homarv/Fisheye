@@ -13,7 +13,7 @@ a{
     align-items: center;
 }
 
-header {
+.fisheye-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;

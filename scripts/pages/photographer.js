@@ -29,7 +29,32 @@ function getProtographerObject (photographers){
 //    )};
 
 async function displayData(photographer, media) {
-    const photographerModel = photographerFactory(photographer);
+    ////input display media and save total like
+    const mediaCard = document.querySelector(".media_photographer");
+    let totalLike = 0;
+
+    media.forEach((media, i= 0) => {
+        if (media.photographerId === photographer.id){
+            i += 1;
+            async function addLike(){{
+                this.style.color ='orange';
+                media.likes += 1; 
+                console.log(media.likes)
+                }
+                return (media.likes);
+            }
+            const mediaModel = mediaFactory(media, i);
+            const mediaCardDOM = mediaModel.getMediaPhotographerCardDOM();
+            mediaCard.appendChild(mediaCardDOM); 
+            let like = document.querySelector(`.media_photographer_like${i}`);
+            like.addEventListener('click',addLike);
+            
+            console.log(media.likes)
+            totalLike += media.likes;
+        }
+    });
+    
+    const photographerModel = photographerFactory(photographer, totalLike);
     ////input display Data description
     const photographerDescription = document.querySelector(".photographer_description");
     const ProfilDescriptionCardDOM = photographerModel.getProfilDescriptionCardDOM(); 
@@ -42,21 +67,13 @@ async function displayData(photographer, media) {
     const photographerPriceAndLike = document.querySelector(".photographer_price_and_like");
     const ProfilPriceAndLikeCardDOM = photographerModel.getProfilPriceAndLikeCardDOM(); 
     photographerPriceAndLike.appendChild(ProfilPriceAndLikeCardDOM)
-    ////input display media
-    const mediaCard = document.querySelector(".media_photographer");
-    media.forEach((media) => {
-        if (media.photographerId === photographer.id){
-            const mediaModel = mediaFactory(media);
-            const mediaCardDOM = mediaModel.getMediaPhotographerCardDOM();
-            mediaCard.appendChild(mediaCardDOM);      
-        }
-  });
+    ////input name Photographer on Form
+    const photographerName = document.querySelector(".photographer_name");
+    const photographerNameFormDOM = photographerModel.getphotographerNameFormDOM(); 
+    photographerName.appendChild(photographerNameFormDOM)
 
+    
 };
-
-     // QUESTION ???
-        /// dois-je ségmenter le GetUserCArdDomen plusieur fonction pour pouvoir le manipuler dans 
-        /// le CSS ou dois-je agir sur chaque élement via le CSS => MIXIN
 
 async function test() {
     // Récupère les datas des photographes
@@ -67,6 +84,7 @@ async function test() {
     displayData(photographer, media);
 };
 
-test();
 
-   
+
+
+test();

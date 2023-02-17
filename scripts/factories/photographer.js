@@ -1,4 +1,4 @@
-function photographerFactory(data) {
+function photographerFactory(data, totalLike) {
     const { name, portrait, city, tagline, price } = data;
     const picture = `assets/photographers/${portrait}`;
     console.log(data)
@@ -31,7 +31,7 @@ function photographerFactory(data) {
     }
 
     function getProfilPhotoCardDOM(){
-        const article = document.createElement('article'); 
+        const article = document.createElement('div'); 
         article.innerHTML =
          `
             <img src=${picture} alt='${data.name}' class='photographer-photo'></img> 
@@ -39,38 +39,31 @@ function photographerFactory(data) {
         return (article);
 
     }
-    /// créer une autre fonction à cet endroit pour displayData => photographer ? nouvelle factory indépendante
+
+    /// créer un élémént paragraphe pour le prix 
     function getProfilPriceAndLikeCardDOM(){
-        const article = document.createElement('article'); 
+        const article = document.createElement('p'); 
         article.innerHTML =
          `
-         <p>${price}€/jour</p>
+         ${totalLike}
+         <i class="fa-solid fa-heart media_photographer_heart"></i>
+         ${price}€/jour
+         `;
+        return (article);
+    }
+
+    /// créer un élément h2 dans la modale pour le nom du photographe 
+    function getphotographerNameFormDOM(){
+        const article = document.createElement('h2'); 
+        article.innerHTML =
+         `
+         ${data.name}
          `;
         return (article);
 
     }
 
-    return { name, picture, city, tagline, price, getUserCardDOM, getProfilDescriptionCardDOM, getProfilPhotoCardDOM, getProfilPriceAndLikeCardDOM }
+    return { name, picture, city, tagline, price, getUserCardDOM, getProfilDescriptionCardDOM, getProfilPhotoCardDOM, getProfilPriceAndLikeCardDOM, getphotographerNameFormDOM}
 }
 
-
-
-        // QUESTION ???
-        //Est-ce qu'on s'attends aussi à un alt sur image
-
-    /*  const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
-        const h2 = document.createElement( 'h2' );
-        h2.textContent = name;
-        const h3 = document.createElement( 'h3' );
-        h3.textContent = city;
-        const taglinearea = document.createElement( 'p' );
-        taglinearea.textContent = tagline;
-        const pricearea = document.createElement( 'p' );
-        pricearea.textContent = price +" €/jour";
-        article.appendChild(img);
-        article.appendChild(h2);
-        article.appendChild(h3);
-        article.appendChild(taglinearea);
-        article.appendChild(pricearea); */
 

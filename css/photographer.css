@@ -105,7 +105,8 @@
     padding: 35px;
 }
 
-.modal header {
+.modal header div {
+    display: flex;
     justify-content: space-between;
     width: 100%;
 }
@@ -115,9 +116,11 @@
 }
 
 .modal header h2 {
-    font-size: 64px;
+    font-size: 55px;
     font-weight: normal;
-    text-align: center;
+    margin-block: 0em;
+    margin-right: 70px;
+    width: 100%;
 }
 
 form {
@@ -137,7 +140,7 @@ form div {
     flex-direction: column;
     width: 100%;
     align-items: self-start;
-    margin-bottom: 26px;
+    margin-bottom: 10px;
 }
 
 form input {
@@ -147,3 +150,6 @@ form input {
     border-radius: 5px;
 }
 
+.text-message{
+    height: 150px;
+}

@@ -10,7 +10,7 @@
     <title>Fisheye - photographe </title>
   </head>
   <body>
-    <header>
+    <header class="fisheye-header">
       <a href="index.html" alt="Fisheye Home page">
         <img src="assets/images/logo.png" class="logo" />
       </a>
@@ -28,8 +28,11 @@
     <div id="contact_modal">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi </h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <div>
+            <h2>Contactez-moi</h2>
+            <img src="assets/icons/close.svg" onclick="closeModal()" />
+          </div>
+          <h2 class="photographer_name"></h2>
         </header>
 				<form>
 					<div>
@@ -53,7 +56,7 @@
               />
 					</div>
           <div>
-            <label>E-mail</label><br>
+            <label>E-mail</label>
             <input
                   class="text-control"
                   type="email"
@@ -62,9 +65,9 @@
               />
           </div>
           <div>
-            <label>Votre message</label><br>
+            <label>Votre message</label>
             <input
-                  class="text-control"
+                  class="text-message"
                   type="text"
                   id="message_form"
                   name="message_form"
@@ -78,6 +81,7 @@
     <script src="/scripts/factories/photographer.js"></script>
     <script src="/scripts/factories/media.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
+    <script src="scripts/utils/likegestion.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>
