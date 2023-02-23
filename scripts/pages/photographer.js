@@ -34,17 +34,17 @@ async function displayData(photographer, media) {
             mediaCard.appendChild(mediaCardDOM); 
             let like = document.querySelector(`.media_photographer_like${i}`);
             let Parentslike = document.querySelector(`.DomSelector${i}`);
+            console.log(Parentslike)
+
 
             ///?? remplacer toute la partie texte ReplaceChild OU destroy + add
             // ?? il sera peut être nécessaire de définir 2 états, cliquable et déja cliqué 
             // ?? switch position true and false 
-            like.addEventListener('click',addLike(media));
+            like.addEventListener('click',addLike);
             totalLike += media.likes;
             console.log(totalLike)
-            function addLike(media){{
-                i=0
-                if(i === 0)
-                {   
+
+            function addLike(){
                     i += 1;
                     media.likes += 1; 
                 ////// Remplace l'émément du body par l'élément sélectionné 
@@ -52,15 +52,12 @@ async function displayData(photographer, media) {
                 newLike.innerHTML = 
                     `${media.likes}`;
                 Parentslike.replaceChild(newLike, like);
-                }
-                else{
-                    console.log("djkbfqsd")
-                }
+               
                 ////// Remplace l'émément du body par l'élément sélectionné 
                 ////   newTotalLike.innerHTML = 
                 //      `${totalLike}`;
                 // Parentslike.replaceChild(newTotalLike, totalLike);
-            }};
+            };
         }
         else{
         }

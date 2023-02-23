@@ -45,7 +45,7 @@
     object-fit: cover;
 }
 
-.super_test1{
+.flex_center_sb{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -57,7 +57,7 @@
     white-space: nowrap;
 }
 
-.super_test2{
+.flex_center{
     display: flex;
     align-items: center;
 }

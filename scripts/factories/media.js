@@ -20,9 +20,9 @@ function mediaFactory(data, i) {
         `  
         <div class="media_photographer_card">
             <img src=${media} alt='${data.title}' class='media_photographer_photo'></img> 
-            <div class='media_photographer_titleandlike${i} super_test1'>
+            <div class='media_photographer_titleandlike${i} flex_center_sb'>
                 <h2 class="media_photographer_title">${data.title}</h2>
-                <div class="super_test2 DomSelector${i} ">
+                <div class="flex_center DomSelector${i} ">
                     <h2 class='media_photographer_like${i}'>${data.likes }</h2>
                     <i class="fa-solid fa-heart media_photographer_heart"></i>
                 </div>
@@ -36,9 +36,9 @@ function mediaFactory(data, i) {
             <video class="video">
                 <source src=${media} alt='${data.title}' type="video/mp4"></img> 
             </video>
-            <div class='media_photographer_titleandlike${i}'>
+            <div class='media_photographer_titleandlike${i} flex_center_sb'>
                 <h2 class="media_photographer_title">${data.title}</h2>
-                <div class="super_test2 DomSelector${i} ">
+                <div class="flex_center DomSelector${i} ">
                     <h2 class='media_photographer_like${i}'>${data.likes }</h2>
                     <i class="fa-solid fa-heart media_photographer_heart"></i>
                 </div>
