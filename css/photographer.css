@@ -45,7 +45,7 @@
     object-fit: cover;
 }
 
-.media_photographer_titleandlike{
+.super_test1{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -57,7 +57,7 @@
     white-space: nowrap;
 }
 
-.media_photographer_like{
+.super_test2{
     display: flex;
     align-items: center;
 }

@@ -34,14 +34,14 @@
           </div>
           <h2 class="photographer_name"></h2>
         </header>
-				<form>
+				<form onsubmit="return false;">
 					<div>
 						<label>Prénom</label>
 						<input
                   class="text-control"
                   type="text"
-                  id="first"
-                  name="first"
+                  id="first_name"
+                  name="first_name"
                   minlength="2"
                 />
 					</div>
@@ -50,8 +50,8 @@
 						<input
                   class="text-control"
                   type="text"
-                  id="first"
-                  name="first"
+                  id="last_name"
+                  name="last_name"
                   minlength="2"
               />
 					</div>
@@ -73,7 +73,7 @@
                   name="message_form"
               />
           </div>
-          <button class="contact_button">Envoyer</button>
+          <button id= "contact_button" class="contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>
