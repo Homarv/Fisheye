@@ -42,13 +42,14 @@ function photographerFactory(data, totalLike) {
 
     /// créer un élémént paragraphe pour le prix 
     function getProfilPriceAndLikeCardDOM(){
-        const article = document.createElement('p'); 
+        const article = document.createElement('div'); 
+        article.classList.add("flex_center");
         article.innerHTML =
          `
-         ${totalLike}
-         <i class="fa-solid fa-heart media_photographer_heart"></i>
-         ${price}€/jour
-         `;
+            <p>${totalLike}</p>
+            <i class="fa-solid fa-heart photographer_heart_total_likes"></i>
+            ${price}€/jour
+        `;
         return (article);
     }
 
