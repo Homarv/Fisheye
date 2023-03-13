@@ -33,14 +33,13 @@ function displayDataPhotogapher(photographer){
     const photographerPhoto = document.querySelector(".photographer_photo");
     const ProfilPhotoCardDOM = photographerModel.getProfilPhotoCardDOM(); 
     photographerPhoto.appendChild(ProfilPhotoCardDOM)
-    
 }
        
 function displayDataMedia(photographer,media) {
     ////input display media and save total like
     const mediaCard = document.querySelector(".media_photographer");
     let totalLike = 0
-
+    let arrayOfActualMedia = new Array();
     //// boucle on object media to filter and display media 
     media.forEach((media) => { 
         if (media.photographerId === photographer.id){
@@ -48,7 +47,9 @@ function displayDataMedia(photographer,media) {
             const mediaModel = mediaFactory(media);
             const mediaCardDOM = mediaModel.getMediaPhotographerCardDOM();
             mediaCard.appendChild(mediaCardDOM);       
-   //         console.log(totalLike)
+        // console.log(totalLike)
+        // console.log(media)
+         arrayOfActualMedia.push(media)
         }
         else{
         }
@@ -56,24 +57,28 @@ function displayDataMedia(photographer,media) {
     const photographerModel = photographerFactory(photographer, totalLike);
     ////input display Price and Like                      ///////voir si il est nécessaire de modifier cette partie et d'en apporter une partie dans la partie supérieur (séparation) 
     const photographerPriceAndLike = document.querySelector(".photographer_price_and_like");
+    photographerPriceAndLike.innerHTML =""
     const ProfilPriceAndLikeCardDOM = photographerModel.getProfilPriceAndLikeCardDOM(); 
     photographerPriceAndLike.appendChild(ProfilPriceAndLikeCardDOM)
+    //console.log(example)
+    //console.log(arrayOfActualMedia)
 
-    return totalLike;
+    return arrayOfActualMedia ;
 };
 
 async function test() {
     // Récupère les datas des photographes
     const { photographers, media } = await getPhotographers();
-    console.log( { photographers, media })
+    console.log({ photographers, media })
     //separate(photographers);
     const photographer = getProtographerObject(photographers);
     displayDataPhotogapher(photographer);
-    const totalLike = displayDataMedia(photographer, media);
-    console.log(totalLike)
-  /*console.log(AllLikeDOM)*/
+    const arrayOfActualMedia = displayDataMedia(photographer, media);
+    console.log(arrayOfActualMedia)
+    /*console.log(AllLikeDOM)*/
     EventOnLike();
-    Lightbox.init()
+    Lightbox.init();
+    inittest(arrayOfActualMedia, photographer);
    // navigationOnLightbox()
 };
 

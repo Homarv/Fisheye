@@ -4,7 +4,6 @@
  * @property {HTMLElement} lightboxcard Dom du card actuellement affiché 
  */
 
-
 class Lightbox {
  
     static init(){
@@ -54,6 +53,10 @@ class Lightbox {
     onKeyUp (e){
         if (e.key === "Escape"){
             this.close(e)
+        } else if (e.key === "ArrowLeft"){
+            this.prev(e)
+        } else if (e.key === "ArrowRight"){
+            this.next(e)
         }
     }
 
@@ -85,33 +88,61 @@ class Lightbox {
  */
     next(e ){
         e.preventDefault()
+        document.removeEventListener('keyup', this.onKeyUp)
         const p = this.lightboxcard.firstElementChild.firstElementChild.src 
+        const q = this.lightboxcard
+        const r = this.lightboxcard.firstElementChild
+        const s = this.lightboxcard.firstElementChild.firstElementChild
         console.log(p)
+        console.log(q)
+        console.log(r)
+        console.log(s)
         console.log(this.cards)
-        for (var i = 0; i < this.cards.length; i++) {
+        let v = this.cards.length 
+        for (var i = 0; i <= this.cards.length ; i++) {
           //  console.log(this.cards[i].firstElementChild.firstElementChild.src)
-            if (p === this.cards[i].firstElementChild.firstElementChild.src){
-                const nextcards = this.cards[i+1]
-                const lightboxcard = nextcards.cloneNode(true)
-                new Lightbox (lightboxcard, this.cards)
+            let element = this.cards[i]
+            let test = element.firstElementChild
+            if (p === test.firstElementChild.src){
+                if (i === v-1 ){
+                    const nextcards = this.cards[0]
+                    const lightboxcard = nextcards.cloneNode(true)
+                    new Lightbox (lightboxcard, this.cards)
+                    }
+                else{
+                    const nextcards = this.cards[i+1]
+                    const lightboxcard = nextcards.cloneNode(true)
+                    new Lightbox (lightboxcard, this.cards)
+                }
             }
-        }
-    }    
+        } 
+    }
+    
+       
 
 /**
  * @param {MouseEvent/KeyboardEvent } e
 */
     prev(e){
         e.preventDefault()
+        document.removeEventListener('keyup', this.onKeyUp)
         const p = this.lightboxcard.firstElementChild.firstElementChild.src 
         console.log(p)
         console.log(this.cards)
+        let v = this.cards.length 
         for (var i = 0; i < this.cards.length; i++) {
           //  console.log(this.cards[i].firstElementChild.firstElementChild.src)
             if (p === this.cards[i].firstElementChild.firstElementChild.src){
-                const nextcards = this.cards[i-1]
-                const lightboxcard = nextcards.cloneNode(true)
-                new Lightbox (lightboxcard, this.cards)
+                if (i === 0 ){
+                    const prevcards = this.cards[v-1]
+                    const lightboxcard = prevcards.cloneNode(true)
+                    new Lightbox (lightboxcard, this.cards)
+                }
+                else{
+                    const prevcards = this.cards[i-1]
+                    const lightboxcard = prevcards.cloneNode(true)
+                    new Lightbox (lightboxcard, this.cards)
+                }
             }
         }
     }

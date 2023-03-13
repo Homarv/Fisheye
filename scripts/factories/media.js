@@ -19,13 +19,13 @@ function mediaFactory(data) {
         article.innerHTML = // faire data.id pour récupérer le même Id que querySELECT
         `  
         <div class="media_photographer_card"> 
-            <div>
+            <div class ="containt_image">
                 <img src=${media} alt='${data.title}' class='media_photographer_photo'></img> 
             </div>
             <div class='media_photographer_titleandlike flex_center_sb'>
                 <h2 class="media_photographer_title">${data.title}</h2>
                 <div class="flex_center unliked ">
-                    <h2 class='media_photographer_like'>${data.likes }</h2>
+                    <h2 class="media_photographer_like">${data.likes }</h2>
                     <i class="fa-solid fa-heart media_photographer_heart"></i>
                 </div>
             </div>
@@ -41,7 +41,7 @@ function mediaFactory(data) {
             <div class='media_photographer_titleandlike flex_center_sb'>
                 <h2 class="media_photographer_title">${data.title}</h2>
                 <div class="flex_center unliked ">
-                    <h2 class='media_photographer_like'>${data.likes }</h2>
+                    <h2 class="media_photographer_like">${data.likes }</h2>
                     <i class="fa-solid fa-heart media_photographer_heart"></i>
                 </div>
             </div>
