@@ -24,6 +24,42 @@ const contactbtn = document.querySelector('#contact_button');
 contactbtn.addEventListener("click", validateSubmit);
 
 function validateSubmit(){  
-      closeModal();
-      printdata();
+    if (validateFirst()*
+    validateLast()*
+    validateEmail() 
+    === 1){
+        printdata();
+        closeModal();
     }
+    else{
+    }   
+}
+
+function validateFirst(){  
+    console.log(firstname.value.length)
+    if (firstname.value.length < 2 ){
+        alert("Votre prénom doit comporter au moins 2 lettres")
+    }
+    else {
+      return true;
+  } 
+}
+
+function validateLast(){  
+    if (lastname.value < 2 ){
+        alert("Votre Nom doit comporter au moins 2 lettres")
+    }
+    else {
+      return true;
+  } 
+}
+  
+const regexpEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+function validateEmail(){  
+if (email.value.match(regexpEmail) ){    
+    return true; 
+    }
+    else {
+        alert("Votre email doit être valide")
+    } 
+}
