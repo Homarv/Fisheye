@@ -6,6 +6,8 @@ function displayModal() {
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
+   // document.removeEventListener('keyup', this.onKeyUp)
+
 }
 
 //        const testing = document.querySelector(".youyou");
@@ -69,3 +71,9 @@ if (email.value.match(regexpEmail) ){
     } 
 }
 
+
+document.addEventListener("keyup", (e) => {
+    if (e.key === "Escape"){
+        closeModal()
+    }
+})

@@ -35,16 +35,16 @@ function mediaFactory(data) {
             article.innerHTML = 
             `  
             <div class="media_photographer_card">
-            <video class="video">
-                <source src=${media} alt='${data.title}' type="video/mp4"></img> 
-            </video>
-            <div class='media_photographer_titleandlike flex_center_sb'>
-                <h2 class="media_photographer_title">${data.title}</h2>
-                <div class="flex_center unliked ">
-                    <h2 class="media_photographer_like">${data.likes }</h2>
-                    <i class="fa-solid fa-heart media_photographer_heart"></i>
-                </div>
-            </div>
+                <video class="video">
+                    <source src=${media} alt='${data.title}' type="video/mp4"></img> 
+                </video>
+                <div class='media_photographer_titleandlike flex_center_sb'>
+                    <h2 class="media_photographer_title">${data.title}</h2>
+                    <div class="flex_center unliked ">
+                        <h2 class="media_photographer_like">${data.likes }</h2>
+                     <i class="fa-solid fa-heart media_photographer_heart"></i>
+                    </div>
+                 </div>
             </div>
             `;
         }

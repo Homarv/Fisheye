@@ -26,10 +26,16 @@ class Lightbox {
     constructor(lightboxcard, cards){
         this.lightboxcard = lightboxcard
         const element = this.buildDOM(lightboxcard)
-        console.log(this.lightboxcard)
+        console.log(this.lightboxcard.firstElementChild.firstElementChild.src)
+        // vérifie si il s'agit d'un élément image ou vidéo 
+        if(this.lightboxcard.firstElementChild.firstElementChild.src != ""){
+            this.lightboxcard.lastElementChild.lastElementChild.style.display= "none"
+        }
+        else{
+            this.lightboxcard.firstElementChild.firstElementChild.setAttribute("controls","controls")
+            this.lightboxcard.lastElementChild.lastElementChild.lastElementChild.style.display= "none"
+        }
         // faire une vérification si c'est une vidéo ou pas, remettre le texte en dessous 
-        this.lightboxcard.firstElementChild.firstElementChild.setAttribute("controls","controls")
-        this.lightboxcard.lastElementChild.lastElementChild.style.display= "none"
         this.cards = cards
         const lightboxmodal  = document.getElementById("lightbox_modal")
         lightboxmodal.style.display ="block"
@@ -70,10 +76,14 @@ class Lightbox {
         console.log(lightboxcard)
         dom.innerHTML =
         `  
-        <i class="fa-solid fa-chevron-left lightbox__prev"></i>
+        <div class = "prev__content">
+            <i class="fa-solid fa-chevron-left lightbox__prev"></i>
+        </div>
         <div class ="lightbox__card"></div>
-        <i class="fa-solid fa-chevron-right lightbox__next"></i>
-        <img src="assets/icons/close.svg" class="close__lightbox" alt="Fermer" style="background-color:red;"/>
+        <div class = "flex__column">
+            <i class="fa-solid fa-chevron-right lightbox__next"></i>
+            <img src="assets/icons/close_lightbox.svg" class="close__lightbox" alt="Fermer"/>
+        </div>
         `
         dom.querySelector(".lightbox__card").appendChild(lightboxcard)
         dom.querySelector(".close__lightbox").addEventListener("click", this.close.bind(this))
@@ -89,6 +99,7 @@ class Lightbox {
     next(e ){
         e.preventDefault()
         document.removeEventListener('keyup', this.onKeyUp)
+        /// Voir cette erreur jeudi 
         const p = this.lightboxcard.firstElementChild.firstElementChild.src 
         const q = this.lightboxcard
         const r = this.lightboxcard.firstElementChild
@@ -118,8 +129,6 @@ class Lightbox {
         } 
     }
     
-       
-
 /**
  * @param {MouseEvent/KeyboardEvent } e
 */
