@@ -7,12 +7,12 @@ function photographerFactory(data, totalLike) {
         article.innerHTML = 
         `
             <a href = "./photographer.html?id=${data.id}" alt='${data.name}'>
-                <h2>${data.name}</h2>
                 <img src=${picture} alt='${data.name}'></img> 
             </a>
-            <h3>${city}</h3>
-            <p>${tagline}</p>
-            <p>${price}€/jour</p>
+            <h2 class = "name_photographer">${data.name}</h2>
+            <h3 class = "city_photographer">${city}</h3>
+            <p class = "description_photographer">${tagline}</p>
+            <p class = "price_photographer">${price}€/jour</p>
         `;
         return (article);
     }

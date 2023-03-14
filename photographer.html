@@ -21,17 +21,20 @@
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
         <div class="photographer_photo"> </div>
       </div>
-        <div class="photographer_price_and_like"></div>
-        <h2 class="sort_bar">Trier par</h2>
- 
-        <label for="sort_bar">Trier par</label>
-
-      <select name="sort_media" id="sort_media">
+      <div class="photographer_price_and_like"></div>
+     
+      <div class="sort_bar">
+        <label for="sort_bar"> <h2>Trier par </h2></label> 
+        <select name="sort_media" id="sort_media">
         <option value="">Popularité</option>
         <option value="dog">Date</option>
         <option value="cat">Titre</option>
         
       </select>
+
+      </div>
+ 
+      
        
         <div class="media_photographer"></div>
     </main>
@@ -43,7 +46,7 @@
 				<header>
           <div>
             <h2>Contactez-moi</h2>
-            <img src="assets/icons/close.svg" onclick="closeModal()" />
+            <img src="assets/icons/close.svg" onclick="closeModal()"/>
           </div>
           <h2 class="photographer_name"></h2>
         </header>
