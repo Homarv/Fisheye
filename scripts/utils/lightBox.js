@@ -103,7 +103,7 @@ class Lightbox {
         console.log(this.cards)
         let v = this.cards.length 
         for (var i = 0; i < this.cards.length ; i++) {
-            p = this.cards[i].firstElementChild.firstElementChild.src
+            let p = this.cards[i].firstElementChild.firstElementChild.src
             let element = this.cards[i]
             console.log(element)
             let test = element.firstElementChild
