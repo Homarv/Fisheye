@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
@@ -9,10 +10,11 @@
 
     <title>Fisheye - photographe </title>
   </head>
+
   <body>
     <header class="fisheye-header">
       <a href="index.html" alt="Fisheye Home page">
-        <img src="assets/images/logo.png" class="logo" />
+        <img src="assets/images/logo.png" class="logo" aria-label="Contact Me" />
       </a>
     </header>
     <main id="main">
@@ -26,67 +28,67 @@
       <div class="sort_bar">
         <label for="sort_bar"> <h2>Trier par </h2></label> 
         <select name="sort_media" id="sort_media">
-        <option value="">Popularité</option>
-        <option value="dog">Date</option>
-        <option value="cat">Titre</option>
-        
-      </select>
+          <option value="">Popularité</option>
+          <option value="dog">Date</option>
+          <option value="cat">Titre</option>
+        </select>
+      </div>  
 
-      </div>
- 
-      
-       
-        <div class="media_photographer"></div>
+      <div class="media_photographer"></div>
     </main>
 
     <div id="lightbox_modal"></div>
 
-    <div id="contact_modal">
+    <div id="contact_modal" role="dialog" aria-labelledby="contact">
 			<div class="modal">
-				<header>
-          <div>
-            <h2>Contactez-moi</h2>
-            <img src="assets/icons/close.svg" class= "close_modal" onclick="closeModal()"/>
-          </div>
-          <h2 class="photographer_name"></h2>
+				<header class="modal_photographer_header">
+            <img src="assets/icons/close.svg" role="button" aria-label="Close-contact-form" class= "close_modal" onclick="closeModal()"/>
         </header>
 				<form onsubmit="return false;">
 					<div>
-						<label>Prénom</label>
+						<label id="First-name">Prénom</label>
 						<input
+                  tabindex="1"
                   class="text-control"
                   type="text"
                   id="first_name"
                   name="first_name"
                   minlength="2"
+                  aria-labelledby="First-name"
                 />
 					</div>
           <div>
-            <label>Nom</label>
+            <label id="Last-Name">Nom</label>
 						<input
+                  tabindex="2"
                   class="text-control"
                   type="text"
                   id="last_name"
                   name="last_name"
                   minlength="2"
+                  aria-labelledby="Last-name"
               />
 					</div>
           <div>
-            <label>E-mail</label>
+            <label id="Email">E-mail</label>
             <input
+                  tabindex="3"
                   class="text-control"
                   type="email"
                   id="email"
                   name="email"
+                  aria-labelledby="Email"
               />
           </div>
           <div>
-            <label>Votre message</label>
+            <label id="message" ar>Votre message</label>
             <input
+                  tabindex="4"
                   class="text-message"
                   type="text"
                   id="message_form"
                   name="message_form"
+                  aria-labelledby="Message"
               />
           </div>
           <button id= "contact_button" class="contact_button">Envoyer</button>

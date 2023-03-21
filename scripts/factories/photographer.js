@@ -6,10 +6,10 @@ function photographerFactory(data, totalLike) {
         const article = document.createElement( 'article' );
         article.innerHTML = 
         `
-            <a href = "./photographer.html?id=${data.id}" alt='${data.name}'>
+            <a href = "./photographer.html?id=${data.id}" aria-label='${data.name}'>
                 <img src=${picture} alt='${data.name}'></img> 
+                <h2 class = "name_photographer">${data.name}</h2>
             </a>
-            <h2 class = "name_photographer">${data.name}</h2>
             <h3 class = "city_photographer">${city}</h3>
             <p class = "description_photographer">${tagline}</p>
             <p class = "price_photographer">${price}€/jour</p>
@@ -21,8 +21,8 @@ function photographerFactory(data, totalLike) {
         const article = document.createElement('article'); 
         article.innerHTML =
          `
-        <h2>${data.name}</h2>
-        <h3>${city}</h3>
+        <h1>${data.name}</h1>
+        <p>${city}</p>
         <p>${tagline}</p>        
 
         `;
@@ -56,9 +56,11 @@ function photographerFactory(data, totalLike) {
     /// créer un élément h2 dans la modale pour le nom du photographe 
     function getphotographerNameFormDOM(){
         const article = document.createElement('h2'); 
+        article.setAttribute("id","contact")
+        article.setAttribute("role","heading")
         article.innerHTML =
          `
-         ${data.name}
+        Contactez-moi ${data.name}
          `;
         return (article);
 

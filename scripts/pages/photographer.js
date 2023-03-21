@@ -22,7 +22,7 @@ function displayDataPhotogapher(photographer){
     const photographerModel = photographerFactory(photographer);
 
     ////input name Photographer on Form
-    const photographerName = document.querySelector(".photographer_name");
+    const photographerName = document.querySelector(".modal_photographer_header");
     const photographerNameFormDOM = photographerModel.getphotographerNameFormDOM(); 
     photographerName.appendChild(photographerNameFormDOM)
     ////input display Data description

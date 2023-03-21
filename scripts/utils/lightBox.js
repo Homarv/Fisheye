@@ -77,12 +77,12 @@ class Lightbox {
         dom.innerHTML =
         `  
         <div class = "prev__content">
-            <i class="fa-solid fa-chevron-left lightbox__prev"></i>
+            <i class="fa-solid fa-chevron-left lightbox__prev" role="link" aria-label="Previous image"></i>
         </div>
         <div class ="lightbox__card"></div>
         <div class = "flex__column">
-            <i class="fa-solid fa-chevron-right lightbox__next"></i>
-            <img src="assets/icons/close_lightbox.svg" class="close__lightbox" alt="Fermer"/>
+            <i class="fa-solid fa-chevron-right lightbox__next" role="link" aria-label="Next image"></i>
+            <img src="assets/icons/close_lightbox.svg" class="close__lightbox" alt="Close dialog"/>
         </div>
         `
         dom.querySelector(".lightbox__card").appendChild(lightboxcard)
@@ -100,19 +100,12 @@ class Lightbox {
         e.preventDefault()
         document.removeEventListener('keyup', this.onKeyUp)
         /// Voir cette erreur jeudi 
-        const p = this.lightboxcard.firstElementChild.firstElementChild.src 
-        const q = this.lightboxcard
-        const r = this.lightboxcard.firstElementChild
-        const s = this.lightboxcard.firstElementChild.firstElementChild
-        console.log(p)
-        console.log(q)
-        console.log(r)
-        console.log(s)
         console.log(this.cards)
         let v = this.cards.length 
-        for (var i = 0; i <= this.cards.length ; i++) {
+        for (var i = 0; i < this.cards.length ; i++) {
           //  console.log(this.cards[i].firstElementChild.firstElementChild.src)
             let element = this.cards[i]
+            console.log(element)
             let test = element.firstElementChild
             if (p === test.firstElementChild.src){
                 if (i === v-1 ){

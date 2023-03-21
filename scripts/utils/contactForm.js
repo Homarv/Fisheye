@@ -10,11 +10,6 @@ function closeModal() {
 
 }
 
-//        const testing = document.querySelector(".youyou");
-//        testing.addEventListener("Escape", (e) => {
-//        console.log ("Hello")
-//})
-
 const firstname = document.querySelector('#first_name');
 const lastname = document.querySelector('#last_name');
 const email = document.querySelector('#email');

@@ -11,14 +11,14 @@ function sort(x, arrayOfActualMedia, photographer ){
     //trier par les likes 
     if (x === 0){
         const datasort = arrayOfActualMedia.sort(function compareNombres(a, b) {
-            return a.likes - b.likes;
+            return b.likes - a.likes;
             })
         console.log(datasort)
         const recovery = document.querySelector(".media_photographer")
         recovery.innerHTML = ""
         displayDataMedia(photographer, datasort)
         }
-        //trier par la date d'ajout 
+    //trier par la date d'ajout 
     else if(x === 1){
         const datasort = arrayOfActualMedia.sort(function compareDate(a, b) {
             return new Date(b.date) - new Date(a.date)
