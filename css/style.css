@@ -39,11 +39,10 @@ h1 {
 }
 
 .photographer_section article {
-    justify-self: center;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 .city_photographer {
