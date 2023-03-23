@@ -106,7 +106,6 @@ class Lightbox {
             let p = this.cards[i].firstElementChild.firstElementChild.src
             let element = this.cards[i]
             console.log(element)
-            let test = element.firstElementChild
             if (p === test.firstElementChild.src){
                 if (i === v-1 ){
                     const nextcards = this.cards[0]
