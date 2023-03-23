@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -14,7 +14,7 @@
   <body>
     <header class="fisheye-header">
       <a href="index.html" alt="Fisheye Home page">
-        <img src="assets/images/logo.png" class="logo" aria-label="Contact Me" />
+        <img src="assets/images/logo.png" class="logo" alt="logo de l'entreprise Fisheye"/>
       </a>
     </header>
     <main id="main">
@@ -27,7 +27,7 @@
      
       <div class="sort_bar">
         <label for="sort_bar"> <h2>Trier par </h2></label> 
-        <select name="sort_media" id="sort_media">
+        <select name="sort_media" id="sort_media" aria-label="sort_bar">
           <option value="">Popularité</option>
           <option value="dog">Date</option>
           <option value="cat">Titre</option>
@@ -42,7 +42,7 @@
     <div id="contact_modal" role="dialog" aria-labelledby="contact">
 			<div class="modal">
 				<header class="modal_photographer_header">
-            <img src="assets/icons/close.svg" role="button" aria-label="Close-contact-form" class= "close_modal" onclick="closeModal()"/>
+            <img src="assets/icons/close.svg" role="button" alt="Close-contact-form" class= "close_modal" onclick="closeModal()"/>
         </header>
 				<form onsubmit="return false;">
 					<div>
@@ -54,7 +54,7 @@
                   id="first_name"
                   name="first_name"
                   minlength="2"
-                  aria-labelledby="First-name"
+                  aria-label="First-name"
                 />
 					</div>
           <div>
@@ -66,18 +66,18 @@
                   id="last_name"
                   name="last_name"
                   minlength="2"
-                  aria-labelledby="Last-name"
+                  aria-label="Last-name"
               />
 					</div>
           <div>
-            <label id="Email">E-mail</label>
+            <label id="email">E-mail</label>
             <input
                   tabindex="3"
                   class="text-control"
                   type="email"
                   id="email"
                   name="email"
-                  aria-labelledby="Email"
+                  aria-label="Email"
               />
           </div>
           <div>
@@ -88,7 +88,7 @@
                   type="text"
                   id="message_form"
                   name="message_form"
-                  aria-labelledby="Message"
+                  aria-label="Message"
               />
           </div>
           <button id= "contact_button" class="contact_button">Envoyer</button>
