@@ -13,7 +13,7 @@ function getProtographerObject (photographers){
         return(i) //retourne l'objet photgrapher  {name: "", id: "", city: "", country: '', tagline: '', …}
     }
     else{
-    }
+    }   
     };
   
 };

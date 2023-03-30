@@ -17,6 +17,15 @@ class Lightbox {
                 const lightboxcard = image.cloneNode(true)                
                 new Lightbox(lightboxcard, cards)
             }))
+        photos.forEach(photo => photo.addEventListener("keyup", e =>{
+            e.preventDefault()
+                if(e.key==="Enter"){
+                    const image = e.currentTarget.parentNode.parentNode
+                    console.log(image)
+                    const lightboxcard = image.cloneNode(true)                
+                    new Lightbox(lightboxcard, cards)
+                }
+            }))
         }
 
  /**
@@ -99,19 +108,18 @@ class Lightbox {
     next(e ){
         e.preventDefault()
         document.removeEventListener('keyup', this.onKeyUp)
-        /// Voir cette erreur jeudi 
+        const p = this.lightboxcard.firstElementChild.firstElementChild.src 
+        console.log(p)
         console.log(this.cards)
         let v = this.cards.length 
-        for (var i = 0; i < this.cards.length ; i++) {
-            let p = this.cards[i].firstElementChild.firstElementChild.src
-            let element = this.cards[i]
-            console.log(element)
-            if (p === test.firstElementChild.src){
+        for (var i = 0; i < this.cards.length; i++) {
+          //  console.log(this.cards[i].firstElementChild.firstElementChild.src)
+            if (p === this.cards[i].firstElementChild.firstElementChild.src){
                 if (i === v-1 ){
                     const nextcards = this.cards[0]
                     const lightboxcard = nextcards.cloneNode(true)
                     new Lightbox (lightboxcard, this.cards)
-                    }
+                }
                 else{
                     const nextcards = this.cards[i+1]
                     const lightboxcard = nextcards.cloneNode(true)
@@ -148,5 +156,3 @@ class Lightbox {
         }
     }
 }
-
-

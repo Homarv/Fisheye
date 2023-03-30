@@ -35,9 +35,16 @@ function onHeartClick(event){
 }
 
 function EventOnLike(){
-   document.querySelectorAll(".media_photographer_heart").forEach( 
-    x=> x.addEventListener("click", onHeartClick )
+    let listeneronheart = document.querySelectorAll(".media_photographer_heart")
+    listeneronheart.forEach( 
+        x=> x.addEventListener("click", onHeartClick )
     )
+    listeneronheart.forEach( 
+        x=> x.addEventListener("keyup", (e) => {
+            if (e.key === "Enter"){
+                onHeartClick(e)
+            }
+        })
+    )  
 }
-
 

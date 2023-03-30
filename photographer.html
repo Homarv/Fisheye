@@ -28,9 +28,9 @@
       <div class="sort_bar">
         <label for="sort_bar"> <h2>Trier par </h2></label> 
         <select name="sort_media" id="sort_media" aria-label="sort_bar">
-          <option value="">Popularité</option>
-          <option value="dog">Date</option>
-          <option value="cat">Titre</option>
+          <option value="popularity">Popularité</option>
+          <option value="date">Date</option>
+          <option value="Title">Titre</option>
         </select>
       </div>  
 
@@ -46,7 +46,7 @@
         </header>
 				<form onsubmit="return false;">
 					<div>
-						<label id="First-name">Prénom</label>
+						<label for="first-name">Prénom</label>
 						<input
                   tabindex="1"
                   class="text-control"
@@ -58,7 +58,7 @@
                 />
 					</div>
           <div>
-            <label id="Last-Name">Nom</label>
+            <label for="last-Name">Nom</label>
 						<input
                   tabindex="2"
                   class="text-control"
@@ -70,18 +70,18 @@
               />
 					</div>
           <div>
-            <label id="email">E-mail</label>
+            <label for="personnal_email">E-mail</label>
             <input
                   tabindex="3"
                   class="text-control"
                   type="email"
-                  id="email"
+                  id="personnal_email"
                   name="email"
                   aria-label="Email"
               />
           </div>
           <div>
-            <label id="message" ar>Votre message</label>
+            <label for="message" >Votre message</label>
             <input
                   tabindex="4"
                   class="text-message"
@@ -96,10 +96,10 @@
 			</div>
 		</div>
     <script src="scripts/utils/getData.js"></script>
-    <script src="/Fisheye/scripts/factories/photographer.js"></script>
-    <script src="/Fisheye/scripts/factories/media.js"></script>
-    <script src="/Fisheye/scripts/pages/photographer.js"></script>
-    <script src="/Fisheye/scripts/utils/contactForm.js"></script>
+    <script src="/scripts/factories/photographer.js"></script>
+    <script src="/scripts/factories/media.js"></script>
+    <script src="/scripts/pages/photographer.js"></script>
+    <script src="/scripts/utils/contactForm.js"></script>
     <script src="scripts/utils/likegestion.js"></script>
     <script src="scripts/utils/lightBox.js"></script>
     <script src="scripts/utils/sortingMedia.js"></script>
