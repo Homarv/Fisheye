@@ -1,6 +1,4 @@
-.theme_color{
-    color: #901C1C;
-}
+
 
 .photograph-header {
     background-color: #FAFAFA;
@@ -132,6 +130,14 @@
     
 .contact_button:focus{
     background-color:#DB8876 ;
+}
+
+.media_photographer_heart{
+    color:#DB8876 ;
+}
+
+.theme_color{
+    color: #901C1C;
 }
 
 /************* Photographer Price and Like ***************/
