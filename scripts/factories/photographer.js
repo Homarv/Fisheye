@@ -1,7 +1,7 @@
 function photographerFactory(data, totalLike) {
     const { name, portrait, city, tagline, price } = data;
     const picture = `assets/photographers/${portrait}`;
-    console.log(data)
+    
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
         article.innerHTML = 
@@ -14,7 +14,7 @@ function photographerFactory(data, totalLike) {
             <p class = "description_photographer">${tagline}</p>
             <p class = "price_photographer">${price}€/jour</p>
         `;
-        return (article);
+        return article;
     }
 
     function getProfilDescriptionCardDOM(){
@@ -26,7 +26,7 @@ function photographerFactory(data, totalLike) {
         <p>${tagline}</p>        
 
         `;
-        return (article);
+        return article;
 
     }
 
@@ -36,7 +36,7 @@ function photographerFactory(data, totalLike) {
          `
             <img src=${picture} alt='${data.name}' class='photographer-photo'></img> 
         `;
-        return (article);
+        return article;
 
     }
 
@@ -50,7 +50,7 @@ function photographerFactory(data, totalLike) {
             <i class="fa-solid fa-heart photographer_heart_total_likes"></i>
             ${price}€/jour
         `;
-        return (article);
+        return article;
     }
 
     /// créer un élément h2 dans la modale pour le nom du photographe 
@@ -62,7 +62,7 @@ function photographerFactory(data, totalLike) {
          `
         Contactez-moi ${data.name}
          `;
-        return (article);
+        return article;
 
     }
 

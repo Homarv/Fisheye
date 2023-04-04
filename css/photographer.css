@@ -89,11 +89,16 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    color: #901C1C;
 }
 
 .flex_center{
     display: flex;
     align-items: center;
+}
+
+.media_photographer_like{
+    color: #901C1C;
 }
 
 .media_photographer_heart{

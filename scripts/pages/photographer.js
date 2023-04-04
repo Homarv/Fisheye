@@ -1,19 +1,16 @@
 function getProtographerObject (photographers){
-    const photographersSection = document.querySelector(".photographer_section");
     const queryString = window.location.search;
    // console.log(queryString) /// on obtiens le ?id  du photographe 
 
     const urlParams = new URLSearchParams(queryString)
     const idPhotographer = urlParams.get('id')
-    console.log(urlParams.get('id')) //on conserve uniquement la valeur de l'id
+    //console.log(urlParams.get('id')) //on conserve uniquement la valeur de l'id
 
     for (let i of photographers) {
     if (i.id == idPhotographer)
     {
-        return(i) //retourne l'objet photgrapher  {name: "", id: "", city: "", country: '', tagline: '', …}
+        return i; //retourne l'objet photgrapher  {name: "", id: "", city: "", country: '', tagline: '', …}
     }
-    else{
-    }   
     };
   
 };
@@ -51,8 +48,6 @@ function displayDataMedia(photographer,media) {
         // console.log(media)
          arrayOfActualMedia.push(media)
         }
-        else{
-        }
     });
     const photographerModel = photographerFactory(photographer, totalLike);
     ////input display Price and Like                      ///////voir si il est nécessaire de modifier cette partie et d'en apporter une partie dans la partie supérieur (séparation) 
@@ -66,21 +61,19 @@ function displayDataMedia(photographer,media) {
     return arrayOfActualMedia ;
 };
 
-async function test() {
+async function init() {
     // Récupère les datas des photographes
     const { photographers, media } = await getPhotographers();
-    console.log({ photographers, media })
     //separate(photographers);
     const photographer = getProtographerObject(photographers);
     displayDataPhotogapher(photographer);
     const arrayOfActualMedia = displayDataMedia(photographer, media);
-    console.log(arrayOfActualMedia)
     /*console.log(AllLikeDOM)*/
-    EventOnLike();
+    eventOnLike();
     Lightbox.init();
-    inittest(arrayOfActualMedia, photographer);
+    eventOnSort(arrayOfActualMedia, photographer);
    // navigationOnLightbox()
 };
 
 // lance la fonction test
-test();
+init();

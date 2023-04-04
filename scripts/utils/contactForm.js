@@ -12,7 +12,7 @@ function closeModal() {
 
 const firstname = document.querySelector('#first_name');
 const lastname = document.querySelector('#last_name');
-const email = document.querySelector('#email');
+const email = document.querySelector('#personnal_email');
 const messageform = document.querySelector('#message_form');
 
 function printdata() {
@@ -38,7 +38,6 @@ function validateSubmit(){
 }
 
 function validateFirst(){  
-    console.log(firstname.value.length)
     if (firstname.value.length < 2 ){
         alert("Votre prénom doit comporter au moins 2 lettres")
     }
@@ -48,24 +47,23 @@ function validateFirst(){
 }
 
 function validateLast(){  
-    if (lastname.value < 2 ){
+    if (lastname.value.length < 2 ){
         alert("Votre Nom doit comporter au moins 2 lettres")
     }
     else {
       return true;
   } 
 }
-  
-const regexpEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-function validateEmail(){  
-if (email.value.match(regexpEmail) ){    
-    return true; 
-    }
-    else {
-        alert("Votre email doit être valide")
-    } 
-}
 
+function validateEmail() {  
+    const regexpEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (regexpEmail.test(email.value.toLowerCase())) {
+      return true;
+    } else {
+      alert("Votre email doit être valide");
+      return false;
+    }
+  }
 
 document.addEventListener("keyup", (e) => {
     if (e.key === "Escape"){

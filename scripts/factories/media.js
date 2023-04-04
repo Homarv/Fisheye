@@ -48,7 +48,7 @@ function mediaFactory(data) {
             </div>
             `;
         }
-        return (article);
+        return article;
     }
     return {id, PhotographerId, title, image, price, date, likes,video, getMediaPhotographerCardDOM } 
 }

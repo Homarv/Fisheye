@@ -9,11 +9,9 @@ class Lightbox {
     static init(){
         const photos = Array.from(document.querySelectorAll('.media_photographer_photo , .video'))
         const cards = photos.map(photo => photo.parentNode.parentNode)
-        console.log(cards)
         photos.forEach(photo => photo.addEventListener("click", e =>{
             e.preventDefault()
                 const image = e.currentTarget.parentNode.parentNode
-                console.log(image)
                 const lightboxcard = image.cloneNode(true)                
                 new Lightbox(lightboxcard, cards)
             }))
@@ -21,7 +19,6 @@ class Lightbox {
             e.preventDefault()
                 if(e.key==="Enter"){
                     const image = e.currentTarget.parentNode.parentNode
-                    console.log(image)
                     const lightboxcard = image.cloneNode(true)                
                     new Lightbox(lightboxcard, cards)
                 }
@@ -35,7 +32,7 @@ class Lightbox {
     constructor(lightboxcard, cards){
         this.lightboxcard = lightboxcard
         const element = this.buildDOM(lightboxcard)
-        console.log(this.lightboxcard.firstElementChild.firstElementChild.src)
+        //console.log(this.lightboxcard.firstElementChild.firstElementChild.src)
         // vérifie si il s'agit d'un élément image ou vidéo 
         if(this.lightboxcard.firstElementChild.firstElementChild.src != ""){
             this.lightboxcard.lastElementChild.lastElementChild.style.display= "none"
@@ -82,7 +79,6 @@ class Lightbox {
     buildDOM (lightboxcard){
         const dom = document.createElement('div')
         dom.classList.add('lightbox__container')
-        console.log(lightboxcard)
         dom.innerHTML =
         `  
         <div class = "prev__content">
@@ -109,8 +105,6 @@ class Lightbox {
         e.preventDefault()
         document.removeEventListener('keyup', this.onKeyUp)
         const p = this.lightboxcard.firstElementChild.firstElementChild.src 
-        console.log(p)
-        console.log(this.cards)
         let v = this.cards.length 
         for (var i = 0; i < this.cards.length; i++) {
           //  console.log(this.cards[i].firstElementChild.firstElementChild.src)
@@ -136,8 +130,6 @@ class Lightbox {
         e.preventDefault()
         document.removeEventListener('keyup', this.onKeyUp)
         const p = this.lightboxcard.firstElementChild.firstElementChild.src 
-        console.log(p)
-        console.log(this.cards)
         let v = this.cards.length 
         for (var i = 0; i < this.cards.length; i++) {
           //  console.log(this.cards[i].firstElementChild.firstElementChild.src)
